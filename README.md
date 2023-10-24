@@ -1,5 +1,7 @@
 # Vision Transformer-Based Multi-Label Survival Prediction for Oropharynx Cancer Radiotherapy Using Planning CT
 
+![plot](./figure/workflow.png)
+
 In this project we developed an transformer based multi-label survival prediction modeling used a publicly available dataset **OPC Radiaomics**. The dataset can be download from https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=33948764 which contains both clincal and image data of 600+ OPC cancer patients treated in Canada. More details about the dataset can be found in:
 - *Kwan JYY, Su J, Huang SH, Ghoraie LS, Xu W, Chan B, Yip KW, Giuliani M, Bayley A, Kim J, Hope AJ, Ringash J, Cho J, McNiven A, Hansen A, Goldstein D, de Almeida JR, Aerts HJ, Waldron JN, Haibe-Kains B, O'Sullivan B, Bratman SV, Liu FF.  (2018)  Radiomic Biomarkers to Refine Risk Models for Distant Metastasis in HPV-related Oropharyngeal Carcinoma . International Journal of Radiation Oncology*Biology*Physics, 1-10. DOI: 10.1016/j.ijrobp.2018.01.057* 
 
