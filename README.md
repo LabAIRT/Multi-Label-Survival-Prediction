@@ -8,14 +8,14 @@ In the shared folder, we provided all our codes for this project, from data prep
 
 ## Preprocessing
 ### Image preprocessing
-We did the image preprocessing with JupyterNotebook, the file is saved at *T:\Physics_Research\LABS\LAB_Wang_Zhang\MeixuChen\OPC_MultiLabel_OutcomePrediction\data preprocessing*. It contains:
+We did the image preprocessing with JupyterNotebook, the file is saved at */data preprocessing*. It contains:
 1. **Data format transformation**: we used *dcmrtstruct2nii* package to convert dicom image and RTstructure files to nii format, which is widely used in python based medical image processing open source projects. Data will be loaded from *oriPath* and saved as nii data in *savePath*. Those who don't have either CT or RTs file will be reported, and the corresponding data won't be used in the following steps. Please note, for some of the patients, their GTVp mask might not be named as *mask_GTV.nii.gz*, I modified them manually.
 2. **Data availablity check**: we checked if gtvp mask is provided, if not, we won't use the corresponding patient data in the following steps.
 3. **Resampling**: we resample the data saved in nii files to voxel size of 2,2,2mm. The data will be saved in *resample_path*. Please modify the value of *resampling* if you need other voxel size.
 4. **Cropping**: we cropped the resampled images to the matrix size we need, which is [80,80,48] in our experiment. The center of the cropped region will be the center of GTVp mask, the image size can be set with *patch_size*. Generated images files will be saved at *crop_path* in nii format.
 
 ### Clinical data preprocessing
-We did the clinical data preprocessing manually, for feature selection and feature coding, please refert our manuscript, which is saved at *T:\Physics_Research\LABS\LAB_Wang_Zhang\MeixuChen\OPC_MultiLabel_OutcomePrediction\manuscript*. The final clinical data sheet is saved at *T:\Physics_Research\LABS\LAB_Wang_Zhang\MeixuChen\OPC_MultiLabel_OutcomePrediction\data*.
+We did the clinical data preprocessing manually, for feature selection and feature coding, please refert our manuscript, which is saved at */manuscript (will update the paper link later)*. The final clinical data sheet of included patients is saved at */data*.
 
 ### Model construction
 We used pytorch-lightning for organizing our coding structure. More details of it can be found at the [official website](https://lightning.ai/). The key items include
@@ -28,6 +28,11 @@ We used pytorch-lightning for organizing our coding structure. More details of i
 Details of model structures can be found in the manuscript.
 ### Data analysis
 KM analysis, AUC calculation
-JupterNotebook files saved at *T:\Physics_Research\LABS\LAB_Wang_Zhang\MeixuChen\OPC_MultiLabel_OutcomePrediction\data analysis*
+JupterNotebook files saved at */data analysis*
 Copy all the five folds validation results to a folder, then copy the analysis code to it, modify the datasheet name in the code, run all to generate the results.
+
+### Reference
+- *Kim, S., et al. (2021). Deep-CR MTLR: a Multi-Modal Approach for Cancer Survival Prediction with Competing Risks. Survival Prediction-Algorithms, Challenges and Applications, PMLR.*
+- *Saeed, Numan, et al. "An ensemble approach for patient prognosis of head and neck tumor using multimodal data." 3D Head and Neck Tumor Segmentation in PET/CT Challenge. Cham: Springer International Publishing, 2021. 278-286.*
+- "Saeed, Numan, et al. "TMSS: An End-to-End Transformer-Based Multimodal Network for Segmentation and Survival Prediction." International Conference on Medical Image Computing and Computer-Assisted Intervention. Cham: Springer Nature Switzerland, 2022."
 
