@@ -1,0 +1,21 @@
+_target_: src.datamodules.hecktor_datamodule.HECKTORDataModule
+
+
+root_dir: ${original_work_dir}
+data_dir: ${data_dir} # data_dir is specified in config.yaml
+cache_dir: /home/s429719/data/OPC_Radiomics/OPC-Radiomics-Nii-resample-crop-128-128-80/ # modify to your path
+Fold: 1
+patch_xy: 80 # whole image
+patch_z: 80 # whole image
+batch_size: 32
+dataset_mean: 0.1209 
+dataset_std: 0.7184
+#train_val_test_split: [176, 24, 24]
+num_workers: 8
+pin_memory: True
+p_tumor: 1
+patient_split: True
+
+
+time_bins_data: ${model.time_bins}
+
